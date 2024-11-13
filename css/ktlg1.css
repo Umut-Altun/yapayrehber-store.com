@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+/* Genel Ayarlar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --bg-color: #081b29;
+    --second-bg-color: #112e42;
+    --text-color: #ededed;
+    --main-color: #00abf0;
+    --transition-time: 0.3s;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Header */
+.header {
+    position: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: var(--transition-time);
+}
+
+.header.sticky {
+    background: var(--bg-color);
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar a {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: 3.5rem;
+    transition: var(--transition-time);
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
+}
+
+/* Ana Bölüm */
+section {
+    min-height: 100vh;
+    padding: 5rem 9% 2rem;
+    margin-top: -5rem;
+}
+
+.carousel-container {
+    display: grid;
+    gap: 2rem;
+    padding-top: 15rem;
+}
+
+.carousel {
+    display: flex;
+    gap: 1rem;
+    padding: 2rem;
+    background-color: var(--bg-color);
+    border-radius: 1rem;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.carousel-item {
+    position: relative;
+    width: 15rem;
+    height: 30rem;
+    border-radius: 2rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    transition: width var(--transition-time);
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-item .overlay {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.carousel-item:hover {
+    width: 30rem;
+}
+
+.carousel-item:hover .overlay {
+    bottom: 2rem;
+    left: 2rem;
+    right: 2rem;
+}
+
+@media (max-width: 400px) {
+    .header {
+        padding: 1.5rem 5%;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+
+    .navbar a {
+        font-size: 1.5rem;
+        margin-left: 2.5rem;
+    }
+
+    section {
+        padding: 7rem 4% 2rem;
+    }
+
+    .carousel-item {
+        width: 7rem;
+        height: 25rem;
+    }
+
+    .carousel-item .overlay {
+        font-size: 1rem;
+    }
+}
